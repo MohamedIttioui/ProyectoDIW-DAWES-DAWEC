@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriCore | Detalle de Producto</title>
+    <!-- <link rel="stylesheet" href="/css/product-detaile.css">
+    <link rel="stylesheet" href="/style.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <img src="/img/logo_transparenteRecotado.png" alt="NutriCore" class="logo">
+        <nav class="main-nav">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Buscar..." aria-label="Buscar">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+            <a href="index.html">Inicio</a>
+            <a href="#">Contacto</a>
+
+            <div class="user-menu">
+                <i class="fas fa-user user-icon"></i>
+                <a href="#">User</a>
+                <div class="user-dropdown">
+                    <button class="btn-primary">Iniciar sesión</button>
+                    <button class="btn-ghost">Registrarse</button>
+                    <a href="#">Mi cuenta</a>
+                    <a href="#">Cerrar sesión</a>
+                    <a href="#">Tus pedidos</a>
+                </div>
+            </div>
+
+            <a href="views/carrito.html" class="cart-btn">Carrito <span id="cart-count">0</span></a>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="product-container">
+        <div class="product-gallery">
+            <img src="/img/protein.png" alt="Proteína Whey Isolate" class="main-image">
+            <div class="thumbs">
+                <img src="/img/protein.png" alt="Vista 1">
+                <img src="/img/protein.png" alt="Vista 2">
+                <img src="/img/protein.png" alt="Vista 3">
+            </div>
+        </div>
+
+        <div class="product-details">
+            <h1 class="product-title">Proteína Whey Isolate</h1>
+            <p class="product-desc">
+                Suplemento de proteína de suero 100% aislada. Ideal para deportistas que buscan una recuperación
+                muscular rápida y efectiva. Bajo en azúcares y grasas, con un alto contenido en BCAA y glutamina
+                natural.
+            </p>
+
+            <div class="selectors">
+                <div class="select-group">
+                    <label>Formato:</label>
+                    <div class="format-options">
+                        <button class="format-btn active" data-price="29.99" data-format="500g">500g</button>
+                        <button class="format-btn" data-price="49.99" data-format="1kg">1kg</button>
+                        <button class="format-btn" data-price="89.99" data-format="2kg">2kg</button>
+                    </div>
+                </div>
+
+                <div class="select-group">
+                    <label for="sabor">Sabor:</label>
+                    <select id="sabor">
+                        <option value="chocolate">Chocolate</option>
+                        <option value="vainilla">Vainilla</option>
+                        <option value="fresa">Fresa</option>
+                        <option value="neutro">Neutro</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="product-info">
+                <span class="price" id="product-price">49.99€</span>
+                <div class="stock">En stock ✅</div>
+            </div>
+
+            <div class="actions">
+                <div class="quantity-line">
+                    <label for="cantidad">Cantidad:</label>
+                    <input type="number" id="cantidad" min="1" value="1">
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn-primary">Agregar al carrito</button>
+                    <button class="btn-ghost">Añadir a favoritos</button>
+                </div>
+            </div>
+
+
+
+            <div class="features">
+                <h3>Características</h3>
+                <ul>
+                    <li>25 g de proteína por porción</li>
+                    <li>0 g de azúcar añadido</li>
+                    <li>Sin gluten ni lactosa</li>
+                    <li>Ideal para recuperación post-entrenamiento</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- PRODUCTOS RELACIONADOS -->
+    <section class="related">
+        <h2 class="section-title">Productos Relacionados</h2>
+        <div class="card-grid">
+            <div class="card">
+                <img src="img/protein.png" alt="Creatina Micronizada">
+                <h4>Creatina Micronizada</h4>
+                <span class="price">€29.99</span>
+            </div>
+            <div class="card">
+                <img src="img/prod3.jpg" alt="BCAA Recovery">
+                <h4>BCAA Recovery 2:1:1</h4>
+                <span class="price">€24.99</span>
+            </div>
+            <div class="card">
+                <img src="img/prod4.jpg" alt="Pre-Entreno Xtreme">
+                <h4>Pre-Entreno Xtreme</h4>
+                <span class="price">€39.99</span>
+            </div>
+            <div class="card">
+                <img src="img/prod4.jpg" alt="Pre-Entreno Xtreme">
+                <h4>Pre-Entreno Xtreme</h4>
+                <span class="price">€39.99</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <p>&copy; 2025 NutriCore. Todos los derechos reservados.</p>
+        <p>
+            <a href="#">Política de privacidad</a> |
+            <a href="#">Términos de uso</a> |
+            <a href="#">Contacto</a>
+        </p>
+    </footer>
+
+    <script src="/js/script-product.js"></script>
+
+</body>
+
+</html>

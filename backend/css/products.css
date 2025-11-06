@@ -1,0 +1,118 @@
+/* Contenedor general */
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 20px 0;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 24px;
+  color: #14950D;
+}
+
+.products-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Tarjeta de producto */
+.product-card {
+  border: 1px solid #14950D;
+  border-radius: 10px;
+  width: 350px;
+  padding: 15px;
+  text-align: center;
+  background-color: #f9f9f9;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen del producto */
+.product-card img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Botones */
+.product-card .buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  margin-top: 12px;
+}
+
+.product-card .buttons a {
+  flex: 1;
+  padding: 8px 0;
+  border-radius: 5px;
+  color: #F6F8F8;
+  font-size: 0.9rem;
+}
+
+.product-card .buttons a.select {
+  background-color: #14950D;
+}
+
+.product-card .buttons a.update {
+  background-color: #007bff;
+}
+
+.product-card .buttons a.delete {
+  background-color: #EE1D0A;
+}
+
+/* --- Página de eliminación de producto --- */
+.delete-view{
+  margin: 24px;
+}
+
+.warning-text {
+  color: #EE1D0A;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.delete-cancel-btn{
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+
+/* Botones del formulario de eliminación */
+.delete {
+  background: #EE1D0A;
+  color: #F6F8F8;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.delete:hover {
+  background: #c41200;
+}
+
+.cancel {
+  background: #007bff;
+  color: #F6F8F8;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.cancel:hover {
+  background: #0056b3;
+}
