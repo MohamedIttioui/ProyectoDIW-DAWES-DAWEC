@@ -50,7 +50,7 @@
                     <div class="menu-item">
                         <a href="#">
                             <i class="fas fa-users"></i>
-                            <span class="menu-text">Customer</span>
+                            <span class="menu-text">Customers</span>
                         </a>
                         <div class="submenu">
                             <a href="/student013/shop/backend/forms/customers/customer_select.php">Select</a>
@@ -90,14 +90,14 @@
             </nav>
 
         <?php else : ?>
-            <!-- Menú simple para guest y customer -->
             <nav class="nav-links">
-                <p>
-                    <input type="text" class="search-input" placeholder="Buscar..." aria-label="Buscar">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Buscar...">
                     <i class="fas fa-search search-icon"></i>
-                </p>
+                    <span>Search</span>
+                </div>
 
-                <a href="#" class="nav-link">
+                <a href="/student013/shop/backend/forms/products/product_list.php" class="nav-link">
                     <i class="fas fa-home"></i><span>Home</span>
                 </a>
 

@@ -6,7 +6,7 @@ $sql = "SELECT product_id, name, description, price, image FROM 013_products LIM
 $result = $conn->query($sql);
 
 // Imagen por defecto
-$defaultImage = "/student013/shop/frontend/img/whey_protein.jpg";
+$defaultImage = "/student013/shop/assets/img/protein.png";
 ?>
 <div class="container">
     <h1>Productos destacados</h1>

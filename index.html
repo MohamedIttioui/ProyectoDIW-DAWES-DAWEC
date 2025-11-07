@@ -15,7 +15,7 @@
             <i class="fas fa-bars"></i>
         </button>
 
-        <img src="img/logo_transparenteRecotado.png" alt="NutriCore" class="logo">
+        <a href="index.html"><img src="assets/img/logo_transparenteRecortado.png" alt="NutriCore" class="logo"></a>
 
         <div class="header-icons">
             <button class="icon-btn search-btn">
@@ -23,10 +23,18 @@
                 <i class="fas fa-search"></i>
                 <span>Buscar</span>
             </button>
-            <button class="icon-btn user-btn">
-                <i class="fas fa-user"></i>
-                <span>Usuario</span>
-            </button>
+            <div class="user-menu">
+                <button class="icon-btn user-btn">
+                    <i class="fas fa-user"></i>
+                    <span id="user-name">Usuario</span>
+                </button>
+                <div class="user-dropdown">
+                    <a href="/student013/shop/backend/forms/form_login.php" class="btn-log">Login</a>
+                    <a href="/student013/shop/backend/forms/customers/customer_insert.php" class="btn-reg">Register</a>
+                </div>
+            </div>
+            <a href="/student013/shop/backend/forms/form_login.php" class="btn-log">Login</a>
+
             <a href="views/carrito.html" class="icon-btn cart-btn" aria-label="Carrito">
                 <i class="fas fa-shopping-cart"></i>
                 <span>Carrito</span>
@@ -110,17 +118,17 @@
         <h1 class="section-title">Nuestros Productos</h1>
         <div class="card-flex">
             <div class="card">
-                <img src="img/protein.png" alt="Proteína Whey Isolate">
+                <img src="assets/img/protein.png" alt="Proteína Whey Isolate">
                 <h4>Proteína Whey Isolate</h4>
                 <div class="price">€24.99</div>
                 <div class="formato">Formato: 1kg</div>
                 <div class="card-actions"> <input type="number" value="1" min="1">
                     <button class="btn btn-primary add-to-cart">Agregar</button>
-                    <a href="#" class="btn btn-ghost">Ver</a>
+                    <a href="views/product-detalle.html" class="btn btn-ghost">Ver</a>
                 </div>
             </div>
             <div class="card">
-                <img src="img/creatina.png" alt="Creatina Monohidratada">
+                <img src="assets/img/creatina.png" alt="Creatina Monohidratada">
                 <h4>Creatina Monohidratada</h4>
                 <div class="price">€14.50</div>
                 <div class="formato">Formato: 500g</div>
@@ -131,7 +139,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="img/vegan-protein.png" alt="Proteína Vegan">
+                <img src="assets/img/vegan-protein.png" alt="Proteína Vegan">
                 <h4>Proteína Vegan</h4>
                 <div class="price">€26.50</div>
                 <div class="formato">Formato: 1kg</div>
@@ -142,7 +150,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="img/BCAA2-1-1.png" alt="BCAA 2:1:1">
+                <img src="assets/img/BCAA2-1-1.png" alt="BCAA 2:1:1">
                 <h4>BCAA 2:1:1</h4>
                 <div class="price">€19.90</div>
                 <div class="formato">Formato: 300g</div>
@@ -153,7 +161,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="img/glutamina.png" alt="Glutamina">
+                <img src="assets/img/glutamina.png" alt="Glutamina">
                 <h4>Glutamina</h4>
                 <div class="price">€12.99</div>
                 <div class="formato">Formato: 500g</div>
@@ -164,7 +172,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="img/omega3.png" alt="Omega 3">
+                <img src="assets/img/omega3.png" alt="Omega 3">
                 <h4>Omega 3</h4>
                 <div class="price">€18.75</div>
                 <div class="formato">Formato: 60 cápsulas</div>
@@ -175,7 +183,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="img/multivitaminico.png" alt="Multivitamínico">
+                <img src="assets/img/multivitaminico.png" alt="Multivitamínico">
                 <h4>Multivitamínico</h4>
                 <div class="price">€22.00</div>
                 <div class="formato">Formato: 90 cápsulas</div>
@@ -186,7 +194,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="img/pre-workout.png" alt="Pre-Workout">
+                <img src="assets/img/pre-workout.png" alt="Pre-Workout">
                 <h4>Pre-Workout</h4>
                 <div class="price">€28.50</div>
                 <div class="formato">Formato: 400g</div>
@@ -199,7 +207,6 @@
         </div>
         <a href="#" id="up">Ver más</a>
     </main>
-    <!-- FOOTER -->
     <footer class="footer">
         <div class="social-links">
             <a href="https://www.facebook.com/NutriCore" target="_blank"><i class="fab fa-facebook"></i>
@@ -226,15 +233,11 @@
         </div>
         <div class="contacto">
             <a href="#">Contacto</a>
-            <!-- <a href="#">
-                <p>mittioui@nutricore.es</p>
-            </a>
-            <p>+34 600 12 46 91</p> -->
         </div>
         <p>&copy; 2025 NutriCore. Todos los derechos reservados.</p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="js/index.js"></script>
 </body>
 
 </html>

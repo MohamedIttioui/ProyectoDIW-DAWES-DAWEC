@@ -1,6 +1,6 @@
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/student013/shop/backend/header.php'; ?>
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . '/student013/shop/backend/conexion.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/student013/shop/backend/db_connect.php');
 
 $customer_id = isset($_GET['customer_id']) ? $_GET['customer_id'] : '';
 $email = isset($_GET['email']) ? $_GET['email'] : '';
@@ -10,10 +10,10 @@ $sql = "SELECT * FROM 013_customers";
 if ($customer_id != '') {
   $sql .= " WHERE customer_id = " . intval($customer_id);
 } elseif ($email != '') {
-  $sql .= " WHERE email = '" . $conexion->real_escape_string($email) . "'";
+  $sql .= " WHERE email = '" . $conn->real_escape_string($email) . "'";
 }
 
-$result = $conexion->query($sql);
+$result = $conn->query($sql);
 ?>
 
 <div class="container">
