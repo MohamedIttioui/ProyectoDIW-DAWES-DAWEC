@@ -8,7 +8,6 @@ $defaultImage = "/student013/shop/assets/img/whey_protein.jpg";
 
 <div class="container">
   <h1>Delete product</h1>
-
   <?php if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["confirm"]) && $_POST["confirm"] === "yes") :
     $product_id = intval($_POST["product_id"]);
     $sql = "DELETE FROM 013_products WHERE product_id = $product_id";
@@ -19,7 +18,6 @@ $defaultImage = "/student013/shop/assets/img/whey_protein.jpg";
       echo "<p>Error: " . htmlspecialchars($conn->error) . "</p>";
     endif;
   ?>
-
   <?php elseif ($product_id > 0) :
     $sql = "SELECT name, description, price, image FROM 013_products WHERE product_id = $product_id";
     $result = $conn->query($sql);
@@ -48,15 +46,12 @@ $defaultImage = "/student013/shop/assets/img/whey_protein.jpg";
           <button type="submit" class="cancel">Cancel</button>
         </form>
       </div>
-
     <?php else : ?>
       <p>Producto no encontrado.</p>
     <?php endif; ?>
-
   <?php else : ?>
     <p>No se ha proporcionado un ID válido.</p>
   <?php endif; ?>
 </div>
-
 <?php $conn->close(); ?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/student013/shop/backend/footer.php'; ?>
