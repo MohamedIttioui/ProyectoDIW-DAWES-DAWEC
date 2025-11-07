@@ -32,37 +32,35 @@ $mensaje = '';
     }
   endif;
   ?>
-
   <?php if ($product_id > 0) :
     $sql = "SELECT name, description, price, stock, vat_included FROM 013_products WHERE product_id = $product_id";
     $result = $conn->query($sql);
   ?>
-
     <?php if ($result && $row = $result->fetch_assoc()) : ?>
       <?php if ($mensaje) : ?><p><?= $mensaje ?></p><?php endif; ?>
 
       <form method="POST" action="db_product_update.php?product_id=<?= $product_id ?>">
         <input type="hidden" name="product_id" value="<?= $product_id ?>">
 
-        <p><label>Nombre:</label>
+        <p><label>New name:</label>
           <input type="text" name="name" value="<?= htmlspecialchars($row['name']) ?>" required>
         </p>
 
-        <p><label>Descripción:</label>
+        <p><label>New description:</label>
           <textarea name="description" required><?= htmlspecialchars($row['description']) ?></textarea>
         </p>
 
-        <p><label>Precio (€):</label>
+        <p><label>New price (€):</label>
           <input type="number" step="0.01" name="price" value="<?= htmlspecialchars($row['price']) ?>" required>
         </p>
 
-        <p><label>Stock:</label>
+        <p><label>New stock:</label>
           <input type="number" name="stock" value="<?= htmlspecialchars($row['stock']) ?>" required>
         </p>
 
-        <p><label><input type="checkbox" name="vat_included" <?= $row['vat_included'] ? 'checked' : '' ?>> IVA incluido</label></p>
+        <p><label><input type="checkbox" name="vat_included" <?= $row['vat_included'] ? 'checked' : '' ?>> Vat included</label></p>
 
-        <p><input type="submit" value="Guardar cambios"></p>
+        <p><input type="submit" value="Save changes"></p>
       </form>
 
     <?php else : ?>

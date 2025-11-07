@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/student013/shop/backend/css/style.css">
+    <!-- <link rel="stylesheet" href="/student013/shop/css/index.css"> -->
     <title>NutriCore</title>
 </head>
 
@@ -19,14 +20,14 @@
     ?>
 
     <header class="header">
-        <img src="/student013/shop/frontend/img/logo_transparenteRecotado.png" alt="NutriCore" class="logo">
+        <a href=""><img src="/student013/shop/assets/img/logo_transparenteRecotado.png" alt="NutriCore" class="logo"></a>
 
         <?php if ($userType === 'admin') : ?>
             <!-- Menú completo para admin -->
             <nav class="nav-menu">
                 <div class="menu-left">
                     <div class="menu-item">
-                        <a href="/student013/shop/frontend/home.html">
+                        <a href="/student013/shop/index.html">
                             <i class="fas fa-home"></i>
                             <span class="menu-text">Home</span>
                         </a>
@@ -97,7 +98,7 @@
                     <span>Search</span>
                 </div>
 
-                <a href="/student013/shop/backend/forms/products/product_list.php" class="nav-link">
+                <a href="/student013/shop/index.html" class="nav-link">
                     <i class="fas fa-home"></i><span>Home</span>
                 </a>
 
@@ -113,7 +114,7 @@
                             <a href="/student013/shop/backend/forms/form_login.php" class="btn-log">Login</a>
                             <a href="/student013/shop/backend/forms/customers/customer_insert.php" class="btn-reg">Register</a>
                         <?php else : ?>
-                            <a href="/student013/shop/backend/customer_profile.php">My count</a>
+                            <a href="/student013/shop/backend/database/db_customers/de_customer_select.php">My count</a>
                             <a href="/student013/shop/backend/database/db_logout.php">Logout</a>
                             <a href="/student013/shop/backend/orders.php">Your orders</a>
                         <?php endif; ?>

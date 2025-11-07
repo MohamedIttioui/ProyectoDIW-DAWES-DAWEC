@@ -3,7 +3,7 @@
 
 <?php
 $product_id = isset($_GET['product_id']) ? intval($_GET['product_id']) : 0;
-$defaultImage = "/student013/shop/frontend/img/whey_protein.jpg";
+$defaultImage = "/student013/shop/assets/img/whey_protein.jpg";
 ?>
 
 <div class="container">
