@@ -1,6 +1,5 @@
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/student013/shop/backend/header.php'; ?>
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/student013/shop/backend/db_connect.php'; ?>
-
 <?php
 $sql = "SELECT product_id, name, price, image FROM 013_products LIMIT 10";
 $result = $conn->query($sql);
@@ -22,18 +21,21 @@ $defaultImage = "/student013/shop/assets/img/whey_protein.jpg";
                     <h3><?php echo $name ?></h3>
                     <p><strong>Price:</strong> €<?= $price ?></p>
                     <div class="buttons">
-                        <a href="/student013/shop/backend/forms/products/product_select.php?product_id=<?= $row['product_id'] ?>"
-                            class="select">Show</a>
-
+                        <?php if ($userType === 'customer'): ?>
+                            <a href="/student013/shop/backend/forms/products/product_select.php?product_id=<?= $row['product_id'] ?>"
+                                class="select">Show</a>
+                            <a href="/student013/shop/backend/database/add_to_cart.php?product_id=<?= $row['product_id'] ?>"
+                                class="update">Add to cart</a>
+                        <?php endif; ?>
                         <?php if ($userType === 'admin'): ?>
+                            <a href="/student013/shop/backend/forms/products/product_select.php?product_id=<?= $row['product_id'] ?>"
+                                class="select">Show</a>
                             <a href="/student013/shop/backend/forms/products/product_update.php?product_id=<?= $row['product_id'] ?>"
                                 class="update">Update</a>
                             <a href="/student013/shop/backend/forms/products/product_delete.php?product_id=<?= $row['product_id'] ?>"
-                                class="delete">Delete</a>
+                                class="delete">Delete
+                            </a>
                         <?php endif; ?>
-
-                        <a href="/student013/shop/backend/database/add_to_cart.php?product_id=<?= $row['product_id'] ?>"
-                            class="update">Add to cart</a>
                     </div>
                 </div>
             <?php endwhile; ?>

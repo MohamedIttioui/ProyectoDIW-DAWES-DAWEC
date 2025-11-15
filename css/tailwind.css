@@ -1,1 +1,185 @@
 @import "tailwindcss";
+@theme {
+  --color-negro: #1D1A1B;
+  --color-verde: #14950D;
+  --color-blanco: #F6F8F8;
+  --color-rojo: #EE1D0A;
+
+  --font-oswald: "Oswald", sans-serif;
+  --font-open: "Open Sans", sans-serif;
+
+  --radius-md: 10px;
+  --radius-lg: 12px;
+}
+
+/* --- CATEGORY NAV --- */
+.category-nav {
+  @apply border-b-[1px] border-verde;
+}
+
+/* --- PRODUCTO --- */
+.product-container {
+  @apply grid grid-cols-1 max-w-[1500px] mx-auto gap-[32px] px-[16px] mt-[24px] mb-[24px];
+}
+
+.product-gallery .main-image {
+  @apply w-full rounded-[12px] shadow-[0_4px_10px_rgba(0,0,0,0.1)];
+}
+
+.small-images {
+  @apply flex gap-[8px] mt-[10px] overflow-x-auto;
+}
+
+.small-images img {
+  @apply w-[80px] h-[80px] rounded-[8px] cursor-pointer object-cover border-[2px] border-transparent flex-none transition;
+}
+
+.small-images img:hover {
+  @apply border-verde;
+}
+
+.product-title {
+  @apply text-[32px] text-verde mb-[12px] font-oswald;
+}
+
+.product-desc {
+  @apply text-[16px] mb-[20px];
+}
+
+/* --- Selector de formato --- */
+.format-options {
+  @apply flex gap-[12px] mt-[6px];
+}
+
+.format-btn {
+  @apply flex-1 px-[16px] py-[12px] border border-negro rounded-[12px] font-oswald bg-blanco text-[#1D1A1B] cursor-pointer text-[1rem] transition-all;
+}
+
+.format-btn:hover {
+  @apply border-verde text-verde;
+}
+
+.format-btn.active {
+  @apply bg-verde border-verde text-blanco;
+}
+
+/* --- Selector de sabor --- */
+.select-group {
+  @apply flex flex-col font-open mt-[16px];
+}
+
+.select-group label {
+  @apply font-semibold mb-[6px] text-negro;
+}
+
+.select-group select {
+  @apply px-[12px] py-[8px] border border-[#ccc] rounded-[6px] text-[1rem] transition;
+}
+
+.select-group select:focus {
+  @apply border-verde outline-none;
+}
+
+.product-info {
+  @apply flex flex-col gap-[12px];
+}
+
+.product-info #product-price,
+.related .card .price {
+  @apply text-verde font-bold text-[36px] mt-[12px];
+}
+
+/* --- Cantidad + Botones --- */
+.actions {
+  @apply flex flex-col gap-[12px] w-full my-[20px];
+}
+
+.quantity {
+  @apply flex items-center gap-[10px];
+}
+
+.quantity label {
+  @apply font-semibold text-negro;
+}
+
+.quantity input[type="number"] {
+  @apply w-[80px] px-[10px] py-[6px] border border-negro rounded-[6px] text-center;
+}
+
+/* Botones */
+.btn-group {
+  @apply flex flex-col gap-[12px] w-full;
+}
+
+.btn-primary {
+  @apply bg-verde text-blanco border-none px-[16px] py-[12px] text-[1rem] rounded-[10px];
+}
+
+.btn-primary:hover {
+  @apply bg-[#0e6b09];
+}
+
+.btn-ghost {
+  @apply bg-transparent border text-verde px-[16px] py-[12px] text-[1rem] rounded-[10px];
+  border: 1px solid var(--color-verde) !important;
+}
+
+.btn-ghost:hover {
+  @apply bg-verde text-blanco;
+}
+
+/* RELACIONADOS */
+.related {
+  @apply max-w-[1200px] mx-auto my-[60px] px-[16px];
+}
+
+.section-title {
+  @apply text-[28px] font-oswald text-verde mb-[24px];
+}
+
+.card-grid {
+  @apply grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-[24px];
+}
+
+.card {
+  @apply bg-blanco rounded-[10px] shadow-[0_4px_12px_rgba(0,0,0,0.08)] text-center p-[16px] transition border border-verde;
+}
+
+.card:hover {
+  @apply -translate-y-[4px];
+}
+
+.card img {
+  @apply w-full rounded-[8px] mb-[8px];
+}
+
+.related .card .price {
+  @apply text-[24px];
+}
+
+@media (min-width: 768px) {
+  .btn-group {
+    @apply flex-row gap-[12px];
+  }
+
+  .btn-group .btn-primary,
+  .btn-group .btn-ghost {
+    @apply flex-1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-container {
+    @apply grid-cols-2;
+  }
+
+  .btn-group {
+    @apply flex-row gap-[12px];
+  }
+
+  .btn-group .btn-primary,
+  .btn-group .btn-ghost {
+    @apply flex-1;
+  }
+}
+

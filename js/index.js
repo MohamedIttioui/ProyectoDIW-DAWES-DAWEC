@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // --- EXISTENTE: menú hamburguesa, etc. ---
     const menuBtn = document.querySelector(".menu-icon");
     const closeBtn = document.querySelector(".close-menu");
     const categoryNav = document.querySelector(".category-nav");
@@ -34,6 +33,18 @@ document.addEventListener("DOMContentLoaded", () => {
         document.addEventListener("click", (e) => {
             if (!userMenu.contains(e.target)) {
                 userMenu.classList.remove("active");
+            }
+        });
+    }
+    /* BUSCADOR INTERACTIVO*/
+    const searchBtn = document.querySelector('.search-btn');
+    const searchInput = document.getElementById('search-input');
+
+    if (searchBtn && searchInput) {
+        searchBtn.addEventListener('click', () => {
+            searchInput.classList.toggle('active');
+            if (searchInput.classList.contains('active')) {
+                searchInput.focus();
             }
         });
     }

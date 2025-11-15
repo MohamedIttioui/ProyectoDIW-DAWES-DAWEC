@@ -1,11 +1,13 @@
 <?php
 session_start();
+// include $_SERVER['DOCUMENT_ROOT'] . '/student013/shop/backend/header.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/student013/shop/backend/db_connect.php';
 
 if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] !== 'customer') {
   header("Location: /student013/shop/backend/database/db_login.php");
   exit;
 }
+include $_SERVER['DOCUMENT_ROOT'] . '/student013/shop/backend/header.php';
 
 $customer_id = $_SESSION['customer_id'];
 $product_id = $_GET['product_id'] ?? null;

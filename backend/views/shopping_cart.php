@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NutriCore | Carrito</title>
-    <link rel="stylesheet" href="/css/carrito.css">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/backend/css/carrito.css">
+    <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-
 <body>
-
-    <!-- HEADER -->
     <header class="site-header">
         <img src="/img/logo_transparenteRecotado.png" alt="NutriCore" class="logo">
         <nav class="main-nav">
@@ -22,7 +18,6 @@
             </div>
             <a href="/index.html">Inicio</a>
             <a href="#">Contacto</a>
-
             <div class="user-menu">
                 <i class="fas fa-user user-icon"></i>
                 <a href="#">User</a>
@@ -34,15 +29,12 @@
                     <a href="#">Tus pedidos</a>
                 </div>
             </div>
-
             <a href="/views/carrito.html" class="cart-btn">Carrito <span id="cart-count">0</span></a>
         </nav>
     </header>
-
     <!-- CONTENIDO PRINCIPAL -->
     <main class="cart-container">
         <h1 class="section-title">Tu Carrito</h1>
-
         <div class="cart-layout">
             <!-- Lista de productos -->
             <div class="cart-items">
@@ -74,7 +66,6 @@
                 </div>
                 <!-- ... más productos ... -->
             </div>
-
             <!-- Resumen sticky -->
             <aside class="cart-summary">
                 <h2>Resumen del pedido</h2>
@@ -87,7 +78,6 @@
                 <div class="summary-total">
                     <span>Total</span><span>€129.96</span>
                 </div>
-
                 <div class="cart-actions">
                     <a href="/views/checkout.html"><button class="btn-primary">Finalizar compra</button></a>
                     <a href="/index.html"><button class="btn-ghost">Seguir comprando</button></a>
@@ -95,8 +85,6 @@
             </aside>
         </div>
     </main>
-
-    <!-- FOOTER -->
     <footer class="site-footer">
         <p>&copy; 2025 NutriCore. Todos los derechos reservados.</p>
         <p>
@@ -105,7 +93,5 @@
             <a href="#">Contacto</a>
         </p>
     </footer>
-
 </body>
-
 </html>

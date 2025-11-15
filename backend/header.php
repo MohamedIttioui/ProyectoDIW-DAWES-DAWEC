@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/student013/shop/backend/css/style.css">
-    <!-- <link rel="stylesheet" href="/student013/shop/css/index.css"> -->
-    <title>NutriCore</title>
+    <link rel="stylesheet" href="/student013/shop/css/index.css">
+    <title>NutriCore | home</title>
 </head>
 
 <body>
@@ -18,11 +18,10 @@
     $userType = $_SESSION['user_type'] ?? 'guest';
     $userEmail = $_SESSION['user_email'] ?? '';
     ?>
-
     <header class="header">
-        <a href=""><img src="/student013/shop/assets/img/logo_transparenteRecotado.png" alt="NutriCore" class="logo"></a>
-
-        <?php if ($userType === 'admin') : ?>
+        <a href=""><img src="/student013/shop/assets/img/logo_transparenteRecotado.png" alt="NutriCore"
+                class="logo"></a>
+        <?php if ($userType === 'admin'): ?>
             <!-- Menú completo para admin -->
             <nav class="nav-menu">
                 <div class="menu-left">
@@ -33,7 +32,6 @@
                         </a>
                     </div>
                 </div>
-
                 <div class="menu-center">
                     <div class="menu-item">
                         <a href="/student013/shop/backend/forms/products/products_list.php">
@@ -47,7 +45,6 @@
                             <a href="/student013/shop/backend/forms/products/product_delete.php">Delete</a>
                         </div>
                     </div>
-
                     <div class="menu-item">
                         <a href="#">
                             <i class="fas fa-users"></i>
@@ -60,7 +57,6 @@
                             <a href="/student013/shop/backend/forms/customers/customer_delete.php">Delete</a>
                         </div>
                     </div>
-
                     <div class="menu-item">
                         <a href="#">
                             <i class="fas fa-truck"></i>
@@ -74,13 +70,12 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="menu-right">
                     <div class="menu-item">
                         <a href="#">
                             <i class="fas fa-user-shield"></i>
                             <span>
-                                <?= isset($_SESSION['user_name']) ? htmlspecialchars($_SESSION['user_name']) : 'User' ?>
+                                <?= isset($_SESSION['user_name']) ? htmlspecialchars($_SESSION['user_name']) : 'Admin' ?>
                             </span>
                         </a>
                         <div class="submenu">
@@ -89,19 +84,18 @@
                     </div>
                 </div>
             </nav>
-
-        <?php else : ?>
+        <?php else: ?>
             <nav class="nav-links">
                 <div class="search-container">
                     <input type="text" class="search-input" placeholder="Buscar...">
-                    <i class="fas fa-search search-icon"></i>
+                    <button class="icon-btn search-btn">
+                        <i class="fas fa-search search-icon"></i>
+                    </button>
                     <span>Search</span>
                 </div>
-
                 <a href="/student013/shop/index.html" class="nav-link">
                     <i class="fas fa-home"></i><span>Home</span>
                 </a>
-
                 <div class="user-menu">
                     <a href="#" class="nav-link">
                         <i class="fas fa-user"></i>
@@ -110,17 +104,16 @@
                         </span>
                     </a>
                     <div class="user-dropdown">
-                        <?php if ($userType === 'guest') : ?>
+                        <?php if ($userType === 'guest'): ?>
                             <a href="/student013/shop/backend/forms/form_login.php" class="btn-log">Login</a>
                             <a href="/student013/shop/backend/forms/customers/customer_insert.php" class="btn-reg">Register</a>
-                        <?php else : ?>
+                        <?php else: ?>
                             <a href="/student013/shop/backend/database/db_customers/de_customer_select.php">My count</a>
                             <a href="/student013/shop/backend/database/db_logout.php">Logout</a>
                             <a href="/student013/shop/backend/orders.php">Your orders</a>
                         <?php endif; ?>
                     </div>
                 </div>
-
                 <a href="/student013/shop/backend/views/shopping_cart.php" class="cart-btn nav-link">
                     <i class="fas fa-shopping-cart"></i>
                     <span>Carrito</span>
