@@ -1,5 +1,11 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/student013/shop/backend/header.php'; ?>
-
+<?php
+if ($userType === 'customer' && isset($_SESSION['customer_id']) && empty($_GET['customer_id'])) {
+  $customer_id = intval($_SESSION['customer_id']);
+} else {
+  $customer_id = isset($_GET['customer_id']) ? intval($_GET['customer_id']) : 0;
+}
+?>
 <form method="POST" action="/student013/shop/backend/database/db_customers/db_customer_update.php">
   <h2>Actualizar Cliente</h2>
 

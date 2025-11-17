@@ -21,7 +21,7 @@ $defaultImage = "/student013/shop/assets/img/whey_protein.jpg";
                     <h3><?php echo $name ?></h3>
                     <p><strong>Price:</strong> €<?= $price ?></p>
                     <div class="buttons">
-                        <?php if ($userType === 'customer'): ?>
+                        <?php if ($userType === 'customer' || $userType === 'guest'): ?>
                             <a href="/student013/shop/backend/forms/products/product_select.php?product_id=<?= $row['product_id'] ?>"
                                 class="select">Show</a>
                             <a href="/student013/shop/backend/database/add_to_cart.php?product_id=<?= $row['product_id'] ?>"

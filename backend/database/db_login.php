@@ -6,16 +6,16 @@ $email = $_POST['email'] ?? '';
 $password = $_POST['password'] ?? '';
 
 // Buscar en admins
-$sqlAdmin = "SELECT email, password FROM 013_admins WHERE email = '$email'";
+$sqlAdmin = "SELECT name, email, password FROM 013_admins WHERE email = '$email'";
 $resultAdmin = $conn->query($sqlAdmin);
 
 if ($resultAdmin && $resultAdmin->num_rows > 0) {
   $admin = $resultAdmin->fetch_assoc();
   if (password_verify($password, $admin['password'])) {
     $_SESSION['user_type'] = 'admin';
-    $_SESSION['user_name'] = 'Administrador';
+    $_SESSION['user_name'] = $admin['name'];
     $_SESSION['user_email'] = $admin['email'];
-    $_SESSION['admin_id'] = $customer['admin_id'];
+    $_SESSION['admin_id'] = $admin['admin_id'];
     header("Location: /student013/shop/backend/index.php");
     exit;
   }

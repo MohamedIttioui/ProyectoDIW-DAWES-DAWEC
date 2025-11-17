@@ -152,6 +152,22 @@ body {
   font-size: 24px;
 }
 
+.icon-btn {
+  background: none;
+  border: none;
+  color: var(--negro);
+  font-size: 1.6rem;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-btn:hover {
+  color: var(--verde);
+}
+
 .user-menu {
   position: relative;
 }
@@ -195,7 +211,7 @@ body {
 /* ================= FORMULARIOS ================= */
 form {
   max-width: 600px;
-  margin: 40px auto;
+  margin: 12px auto;
   padding: 24px;
   background-color: var(--blanco);
   border: 1px solid var(--verde);
@@ -204,7 +220,6 @@ form {
 }
 
 form h2 {
-  font-family: 'Oswald', sans-serif;
   font-size: 24px;
   margin-bottom: 20px;
   color: var(--verde);
@@ -380,6 +395,8 @@ h1 {
   padding: 18px 5px;
   justify-items: center;
   gap: 20px;
+  background-color: var(--negro);
+  color: var(--blanco);
 }
 
 .social-links {

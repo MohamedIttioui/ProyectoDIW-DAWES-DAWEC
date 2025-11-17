@@ -1,0 +1,196 @@
+:root {
+  --negro: #1D1A1B;
+  --verde: #14950D;
+  --blanco: #F6F8F8;
+  --rojo: #EE1D0A;
+}
+
+/* --- FUENTES --- */
+@font-face {
+  font-family: 'Oswald';
+  src: url('/student013/shop/assets/fonts/Oswald-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/student013/shop/assets/fonts/OpenSans-Regular.ttf') format('truetype');
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--blanco);
+  color: var(--negro);
+}
+
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+h1,
+h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--verde);
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+}
+
+.customers-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.customer-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 300px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.customer-card:hover {
+  transform: scale(1.02);
+}
+
+.customer-img {
+  width: 100%;
+  max-width: 120px;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  object-fit: cover;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.customer-card h3 {
+  margin-top: 0;
+  color: var(--negro);
+  font-family: 'Oswald', sans-serif;
+}
+
+.customer-card p {
+  margin: 0.4rem 0;
+  font-size: 0.95rem;
+}
+
+.buttons {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.buttons a {
+  text-decoration: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: white;
+  margin: 0.2rem;
+  flex: 1 1 30%;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.select {
+  background-color: var(--verde);
+}
+
+.update {
+  background-color: #f39c12;
+}
+
+.delete {
+  background-color: var(--rojo);
+}
+
+.profile-update {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  background-color: var(--blanco);
+  border: 1px solid var(--verde);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.container-form {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.profile-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s;
+  border: 1px solid var(--negro);
+}
+
+.profile-image:hover {
+  transform: scale(1.05);
+}
+
+.profile-icon {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  background-color: var(--gris-claro);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-form {
+  flex: 2;
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 1rem 2rem;
+  align-items: center;
+}
+
+.profile-form label {
+  font-weight: bold;
+  color: var(--negro);
+  font-family: 'Oswald', sans-serif;
+  text-align: right;
+}
+
+.profile-form input[type="text"],
+.profile-form input[type="email"],
+.profile-form input[type="password"] {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #fff;
+  width: 100%;
+}
+
+.profile-form input[type="submit"] {
+  grid-column: 2;
+  background-color: var(--verde);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.4rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: 'Oswald', sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.profile-form input[type="submit"]:hover {
+  background-color: #0f7c0a;
+}

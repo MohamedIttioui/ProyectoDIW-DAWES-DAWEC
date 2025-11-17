@@ -1,52 +1,60 @@
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/student013/shop/backend/header.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/student013/shop/backend/header.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/student013/shop/backend/db_connect.php'; ?>
+
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . '/student013/shop/backend/db_connect.php');
-
-$customer_id = isset($_GET['customer_id']) ? $_GET['customer_id'] : '';
-$email = isset($_GET['email']) ? $_GET['email'] : '';
-
-$sql = "SELECT * FROM 013_customers";
-
-if ($customer_id != '') {
-  $sql .= " WHERE customer_id = " . intval($customer_id);
-} elseif ($email != '') {
-  $sql .= " WHERE email = '" . $conn->real_escape_string($email) . "'";
+if ($userType === 'customer' && isset($_SESSION['customer_id']) && empty($_GET['customer_id'])) {
+  $customer_id = intval($_SESSION['customer_id']);
+} else {
+  $customer_id = isset($_GET['customer_id']) ? intval($_GET['customer_id']) : 0;
 }
-
-$result = $conn->query($sql);
 ?>
-
+<link rel="stylesheet" href="/student013/shop/backend/css/customers.css">
 <div class="container">
-  <h2>Listado de Clientes</h2>
+  <h1>Your profile</h1>
+  <?php
+  $canAccess = false;
 
-  <?php if ($result && $result->num_rows > 0): ?>
-    <table>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Nombre</th>
-          <th>Apellidos</th>
-          <th>NIF</th>
-          <th>Email</th>
-          <th>Dirección</th>
-          <th>Creado</th>
-        </tr>
-      </thead>
-      <tbody>
-        <?php while ($row = $result->fetch_assoc()): ?>
-          <tr>
-            <td><?= htmlspecialchars($row['customer_id']) ?></td>
-            <td><?= htmlspecialchars($row['first_name']) ?></td>
-            <td><?= htmlspecialchars($row['last_name']) ?></td>
-            <td><?= htmlspecialchars($row['nif']) ?></td>
-            <td><?= htmlspecialchars($row['email']) ?></td>
-            <td><?= htmlspecialchars($row['address']) ?></td>
-            <td><?= htmlspecialchars($row['created_at']) ?></td>
-          </tr>
-        <?php endwhile; ?>
-      </tbody>
-    </table>
+  if ($userType === 'admin') {
+    $canAccess = true;
+  } elseif ($userType === 'customer' && isset($_SESSION['customer_id']) && $_SESSION['customer_id'] == $customer_id) {
+    $canAccess = true;
+  }
+
+  if ($customer_id > 0 && $canAccess):
+    $sql = "SELECT first_name, last_name, nif, email, address, created_at FROM 013_customers WHERE customer_id = $customer_id";
+    $result = $conn->query($sql);
+    ?>
+
+    <?php if ($result && $result->num_rows > 0):
+      $row = $result->fetch_assoc();
+      $name = htmlspecialchars($row['first_name'] . ' ' . $row['last_name'] ?? 'Sin nombre');
+      $email = htmlspecialchars($row['email'] ?? '');
+      $nif = htmlspecialchars($row['nif'] ?? '');
+      $address = htmlspecialchars($row['address'] ?? '');
+      $createdAt = htmlspecialchars($row['created_at'] ?? '');
+      ?>
+      <div class="customer-card">
+        <img src="/student013/shop/assets/icons/user.svg" alt="Foto de <?= $name ?>" class="customer-img">
+        <h3><?= $name ?></h3>
+        <p><strong>Email:</strong> <?= $email ?></p>
+        <p><strong>NIF:</strong> <?= $nif ?></p>
+        <p><strong>Dirección:</strong> <?= $address ?></p>
+        <p><strong>Registrado el:</strong> <?= $createdAt ?></p>
+        <div class="buttons">
+          <a href="/student013/shop/backend/database/db_customers/db_customer_update.php?customer_id=<?= $customer_id ?>"
+            class="update">Actualizar</a>
+          <a href="/student013/shop/backend/database/db_customers/db_customer_delete.php?customer_id=<?= $customer_id ?>"
+            class="delete">Eliminar</a>
+        </div>
+      </div>
+    <?php else: ?>
+      <p>Cliente no encontrado.</p>
+    <?php endif; ?>
+
   <?php else: ?>
-    <p>No hay clientes registrados.</p>
+    <p>No tienes permisos para ver este perfil.</p>
   <?php endif; ?>
 </div>
+
+<?php $conn->close(); ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/student013/shop/backend/footer.php'; ?>

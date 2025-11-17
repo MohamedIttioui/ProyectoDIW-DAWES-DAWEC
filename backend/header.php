@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/student013/shop/backend/css/style.css">
-    <link rel="stylesheet" href="/student013/shop/css/index.css">
+    <!-- <link rel="stylesheet" href="/student013/shop/css/index.css"> -->
     <title>NutriCore | home</title>
 </head>
 
@@ -24,6 +24,13 @@
         <?php if ($userType === 'admin'): ?>
             <!-- Menú completo para admin -->
             <nav class="nav-menu">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Buscar..." onkeyup="searchProducts(this.value)">
+                    <button class="icon-btn search-btn">
+                        <i class="fas fa-search search-icon"></i>
+                        <span>Search</span>
+                    </button>
+                </div>
                 <div class="menu-left">
                     <div class="menu-item">
                         <a href="/student013/shop/index.html">
@@ -46,7 +53,7 @@
                         </div>
                     </div>
                     <div class="menu-item">
-                        <a href="#">
+                        <a href="/student013/shop/backend/forms/customers/customers_list.php">
                             <i class="fas fa-users"></i>
                             <span class="menu-text">Customers</span>
                         </a>
@@ -87,11 +94,11 @@
         <?php else: ?>
             <nav class="nav-links">
                 <div class="search-container">
-                    <input type="text" class="search-input" placeholder="Buscar...">
+                    <input type="text" class="search-input" placeholder="Buscar..." onkeyup="searchProducts(this.value)">
                     <button class="icon-btn search-btn">
                         <i class="fas fa-search search-icon"></i>
+                        <span>Search</span>
                     </button>
-                    <span>Search</span>
                 </div>
                 <a href="/student013/shop/index.html" class="nav-link">
                     <i class="fas fa-home"></i><span>Home</span>
@@ -108,7 +115,7 @@
                             <a href="/student013/shop/backend/forms/form_login.php" class="btn-log">Login</a>
                             <a href="/student013/shop/backend/forms/customers/customer_insert.php" class="btn-reg">Register</a>
                         <?php else: ?>
-                            <a href="/student013/shop/backend/database/db_customers/de_customer_select.php">My count</a>
+                            <a href="/student013/shop/backend/database/db_customers/db_customer_select.php">My count</a>
                             <a href="/student013/shop/backend/database/db_logout.php">Logout</a>
                             <a href="/student013/shop/backend/orders.php">Your orders</a>
                         <?php endif; ?>
@@ -122,3 +129,5 @@
             </nav>
         <?php endif; ?>
     </header>
+    <div class="products-flex" id="products-container" style="margin-top: 20px;">
+    </div>
